@@ -8,112 +8,112 @@
 <br />Transactions class that stores all sales and transactions as well as updating numbers to reflect the occured sales
 <br />Report class that prints all sales and products in inventory
 <br />Tracks all individual sales, as well as total earned
-# Adds products to the inventory
-product1 = Product("laptop", "Electronics", 999.99, 10, "1")
-product2 = Product("hat", "Clothing", 19.99, 10, "2")
-product3 = Product("cola", "Drink",2.49,10,"3")
-inventory.add_product(product1)
-inventory.add_product(product2)
-inventory.add_product(product3)
-# Gets information about a product
 
+
+
+
+# Test results are below
+
+# Product and inventory
+## Adds products to the inventory
+<br />product1 = Product("laptop", "Electronics", 999.99, 10, "1")
+<br />product2 = Product("hat", "Clothing", 19.99, 10, "2")
+<br />product3 = Product("cola", "Drink",2.49,10,"3")
+<br />inventory.add_product(product1)
+<br />inventory.add_product(product2)
+<br />inventory.add_product(product3)
 report.print_products()
-
-
-Results
-"
-Product Report:
-Name: laptop
-Category: Electronics
-Price: 999.99        
-Quantity: 10
-
-Name: hat
-Category: Clothing   
-Price: 19.99
-Quantity: 10
-
-Name: cola
-Category: Drink      
-Price: 2.49
-Quantity: 10
-"
+## Results 1
+<br />Product Report:
+<br />Name: laptop
+<br />Category: Electronics
+<br />Price: 999.99        
+<br />Quantity: 10
+<br />
+<br />Name: hat
+<br />Category: Clothing   
+<br />Price: 19.99
+<br />Quantity: 10
+<br />
+<br />Name: cola
+<br />Category: Drink      
+<br />Price: 2.49
+<br />Quantity: 10
 
 
 
 
 
+## Gets info of specific product
+<br />print("get info")
+<br />inventory.get_info("2")
 
-print("get info")
-inventory.get_info("2")
-
-get info
-Name: hat
-Category: Clothing
-Price: 19.99
-Quantity: 10
-ID: 2
-
-
-
-
-inventory.subtract_prod("3")
-report.print_products()
-
-Result"
-Product Report:
-Name: laptop
-Category: Electronics
-Price: 999.99
-Quantity: 10
-
-Name: hat
-Category: Clothing
-Price: 19.99
-Quantity: 10
-"
+## Result 2
+<br />Name: hat
+<br />Category: Clothing
+<br />Price: 19.99
+<br />Quantity: 10
+<br />ID: 2
 
 
 
-# Create a sale
-sale1 = Sale(product1, 2)
-sale2 = Sale(product2, 3)
+## Subtracts product 
+<br />inventory.subtract_prod("3")
+<br />report.print_products()
 
-# Create a transaction and add the sales
+## Result 3
+<br />Product Report:
+<br />Name: laptop
+<br />Category: Electronics
+<br />Price: 999.99
+<br />Quantity: 10
 
-transaction.add_sale(sale1)
-transaction.add_sale(sale2)
-
-# Calculate the total amount of the transaction
-total_amount = transaction.total_amount()
-
-# Print the sales report
-report.print_sales()
-print(f"Total Earned:{total_amount}")
-print()
-# Print the product report
-report.print_products()
+<br />Name: hat
+<br />Category: Clothing
+<br />Price: 19.99
+<br />Quantity: 10
 
 
-Output
-Sales Report:
-Product: laptop
-Quantity: 2
-Price: 999.99
+# Sales and transactions
+## Creates sales
+<br />sale1 = Sale(product1, 2)
+<br />sale2 = Sale(product2, 3)
 
-Product: hat
-Quantity: 3
-Price: 19.99
+## Create a transaction and add the sales
 
-Total Earned:2059.95
+<br />transaction.add_sale(sale1)
+<br />transaction.add_sale(sale2)
 
-Product Report:
-Name: laptop
-Category: Electronics
-Price: 999.99
-Quantity: 8
+## Calculate the total amount of the transaction
+<br />total_amount = transaction.total_amount()
 
-Name: hat
-Category: Clothing
-Price: 19.99
-Quantity: 7
+## Print the sales report
+<br />report.print_sales()
+<br />print(f"Total Earned:{total_amount}")
+<br />print()
+<br />## Print the product report
+<br />report.print_products()
+
+## Result 3
+<br />Output
+<br />Sales Report:
+<br />Product: laptop
+<br />Quantity: 2
+<br />Price: 999.99
+
+<br />Product: hat
+<br />Quantity: 3
+<br />Price: 19.99
+
+<br />Total Earned:2059.95
+
+<br />Product Report:
+<br />Name: laptop
+<br />Category: Electronics
+<br />Price: 999.99
+<br />Quantity: 8
+
+<br />Name: hat
+<br />Category: Clothing
+<br />Price: 19.99
+<br />Quantity: 7
