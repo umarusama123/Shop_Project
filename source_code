@@ -1,0 +1,133 @@
+class Product:#product class that creates and stores values of said product
+    def __init__(self, name, category, price, quantity, ID):
+        self.name = name
+        self.category = category
+        self.price = price
+        self.quantity = quantity
+        self.ID = ID
+#inventory Class that creates an inventroy to store the products
+class Inventory:
+    def __init__(self):
+        self.products = []
+
+    def add_product(self, product):
+        self.products.append(product)
+
+    def subtract_prod(self,ID):
+        for item in self.products:
+            if item.ID == ID:
+                self.products.remove(item)
+                break
+
+    def add_prod(self, ID, quantity):
+        for item in self.products:
+            if item.ID == ID:
+                item.quantity += quantity
+                break
+
+    def get_info(self, ID):
+        for item in self.products:
+            if item.ID == ID:
+                print(f"Name: {item.name}")
+                print(f"Category: {item.category}")
+                print(f"Price: {item.price}")
+                print(f"Quantity: {item.quantity}")
+                print(f"ID: {item.ID}\n")
+                return
+        print("Product not in inventory")
+
+#Sale class that creates and stores sales
+class Sale:
+    def __init__(self, product, quantity):
+        self.product = product
+        self.quantity = quantity
+        self.update
+    def update(self):
+      for item in inventory.products:
+        if item.ID == self.product.ID:
+            item.quantity -= self.quantity
+            break
+    def total(self):
+      return self.product.price*self.quantity
+class Transactions:
+    all_sales = []
+
+    def __init__(self, sales=None):
+        if sales is None:
+            self.sales = []
+        else:
+            self.sales = sales
+    
+    def add_sale(self, sale):
+        self.sales.append(sale)
+        self.all_sales.append(sale)
+        sale.update()
+    def total_amount(self):
+        total = 0
+        for sale in self.sales:
+            total += sale.product.price * sale.quantity
+        return total
+
+#Report class that prints all sales and inventroy
+class Report:
+
+    def __init__(self, sales, products):
+        self.sales = sales
+        self.products = products
+
+    def print_sales(self):
+        print("Sales Report:")
+
+        for sale in self.sales:
+            print(f"Product: {sale.product.name}")
+            print(f"Quantity: {sale.quantity}")
+            print(f"Price: {sale.product.price}\n")
+
+    def print_products(self):
+        print("Product Report:")
+        for product in self.products:
+            print(f"Name: {product.name}")
+            print(f"Category: {product.category}")
+            print(f"Price: {product.price}")
+            print(f"Quantity: {product.quantity}\n")
+
+inventory = Inventory()
+transaction = Transactions()
+report = Report(transaction.sales, inventory.products)
+
+# Adds products to the inventory
+product1 = Product("laptop", "Electronics", 999.99, 10, "1")
+product2 = Product("hat", "Clothing", 19.99, 10, "2")
+product3 = Product("cola", "Drink",2.49,10,"3")
+inventory.add_product(product1)
+inventory.add_product(product2)
+inventory.add_product(product3)
+# Gets information about a product
+
+report.print_products()
+print("get info")
+inventory.get_info("2")
+# Updates the stock quantity of a product
+inventory.subtract_prod("3") #subtracts cola from inventory
+report.print_products()
+
+
+
+# Create a sale
+sale1 = Sale(product1, 2)
+sale2 = Sale(product2, 3)
+
+# Create a transaction and add the sales
+
+transaction.add_sale(sale1)
+transaction.add_sale(sale2)
+
+# Calculate the total amount of the transaction
+total_amount = transaction.total_amount()
+
+# Print the sales report
+report.print_sales()
+print(f"Total Earned:{total_amount}")
+print()
+# Print the product report
+report.print_products()
