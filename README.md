@@ -1,6 +1,6 @@
 # Shop_Project
 *Shop project for project1
-<br />project Report
+<br />Project Report:
 <br />Implemented functions
 <br />product class that creates and stores products
 <br />inventory class that creates and stores inventories
