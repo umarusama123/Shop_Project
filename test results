@@ -1,3 +1,6 @@
+
+These are not codes only test results 
+
 # Adds products to the inventory
 product1 = Product("laptop", "Electronics", 999.99, 10, "1")
 product2 = Product("hat", "Clothing", 19.99, 10, "2")
